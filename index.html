@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body style="text-align: center;">
+
+
+    <logo id="my-node"  style="color: black; font-size: 10pc; font-family: Arial;">
+
+        <ca style="color: rgb(234, 67, 53);">
+            Y
+        </ca><ca >
+            a
+        </ca><ca>
+            n
+        </ca><ca style="color: rgb(66, 133, 244);">
+            g
+        </ca><ca style="color: rgb(59, 171, 90);">
+            l
+        </ca><ca style="color: rgb(234, 67, 53);">
+            e
+        </ca>
+        
+    </logo>
+
+    <script src="js/dom-to-image.min.js"> </script>
+
+    <script>
+
+        var node = document.getElementById('my-node');
+
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+
+    </script>
+
+</body>
+
+</html> 
